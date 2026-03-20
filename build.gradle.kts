@@ -21,6 +21,7 @@ subprojects {
 
         maven {
             nexus()
+            githubPackages()
             name = "${mod.id.get()}-$key-${project.name}"
             artifactVersion = "$semver-${mod.minecraftVersion.get()}"
         }
