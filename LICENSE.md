@@ -1,8 +1,9 @@
 <!---
 <meta>
    <source>@pssbletrngle/github-meta-generator</source>
-   <version>0.0.0-dev</version>
-   <timestamp>2026-03-20T10:56:23.276Z</timestamp>
+   <version>1.0.21</version>
+   <timestamp>2026-03-21T08:37:10.735Z</timestamp>
+   <hash>787f509ab79b43c2</hash>
 </meta>
 -->
 
@@ -15,11 +16,6 @@ All Rights Reserved
 Copyright (c) 2026 PssbleTrngle
 
 This license applies to any files under the following directories:
-
-- ./common/src/main/resources/assets/
-- ./fabric/src/main/resources/assets/
-- ./forge/src/main/resources/assets/
-- ./neoforge/src/main/resources/assets/
 
 ---
 
