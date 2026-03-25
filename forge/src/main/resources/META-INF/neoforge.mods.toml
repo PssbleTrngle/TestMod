@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[43,)"
+loaderVersion="[1,)"
 license="MIT"
 
 [[mods]]
@@ -9,15 +9,15 @@ displayName="${mod_name}"
 authors="${mod_author}"
 
 [[dependencies.${mod_id}]]
-    modId="forge"
+    modId="neoforge"
     mandatory=true
-    versionRange="[43,)"
+    versionRange="[21,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.${mod_id}]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.20,1.21)"
+    versionRange="${mc_version_range}"
     ordering="NONE"
     side="BOTH"

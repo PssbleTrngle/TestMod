@@ -1,11 +1,10 @@
 plugins {
-    id("com.possible-triangle.forge")
+    id("com.possible-triangle.neoforge")
 }
 
-forge {
+neoforge {
     dependOn(project(":common"))
 
-    enableMixins()
     accessWidener(project(":common"))
 
     dataGen {
