@@ -1,7 +1,3 @@
 plugins {
-    id("com.possible-triangle.architectury")
-}
-
-common {
-    accessWidener()
+    id("com.possible-triangle.common")
 }
