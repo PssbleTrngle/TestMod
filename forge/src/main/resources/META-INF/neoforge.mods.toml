@@ -21,3 +21,6 @@ authors="${mod_author}"
     versionRange="${mc_version_range}"
     ordering="NONE"
     side="BOTH"
+
+[[mixins]]
+    config="${mod_id}.mixins.json"
