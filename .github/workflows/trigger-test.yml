@@ -1,11 +1,14 @@
-name: Trigger Release
+name: Trigger Test
 
 on:
   schedule:
-    - cron: "30 4 * * 0,3"
+    - cron: "10 4 * * *"
   workflow_dispatch:
   repository_dispatch:
-    types: [trigger-releases]
+    types: [trigger-test]
+
+env:
+  CI: true
 
 jobs:
   trigger:
@@ -30,12 +33,20 @@ jobs:
             version: 1.20.x
     runs-on: ubuntu-latest
     steps:
-      - uses: softprops/action-gh-release@v2
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          name: ${{ matrix.setup.key }} 1.0.${{ github.run_number }} (${{ matrix.setup.version }})
-          tag_name: 1.0.${{ github.run_number }}-${{ matrix.setup.version }}-${{ matrix.setup.key }}
-          body: "this is an automatic test release"
-          target_commitish: main/${{ matrix.setup.key }}/${{ matrix.setup.version }}
-          token: ${{ secrets.TRIGGER_TOKEN }}
+          ref: main/${{ matrix.setup.key }}/${{ matrix.setup.version }}
+          fetch-depth: 0
+
+      - uses: actions/setup-java@v4
+        with:
+          java-version: 21
+          distribution: temurin
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-read-only: true
+
+      - name: Test
+        run: ./gradlew build check publish
