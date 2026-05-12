@@ -1,8 +1,13 @@
 plugins {
-    id("com.possible-triangle.core")
-    id("com.possible-triangle.common") apply false
-    id("com.possible-triangle.neoforge") apply false
-    id("com.possible-triangle.fabric") apply false
+    id("com.possible-triangle.neoforge")
+}
+
+neoforge {
+    accessTransformer()
+
+    dataGen {
+        splitSourceSet()
+    }
 }
 
 val (semver, _, key) =
@@ -10,21 +15,17 @@ val (semver, _, key) =
         .get()
         .split("-")
 
-subprojects {
-    apply(plugin = "com.possible-triangle.core")
+upload {
+    forEach {
+        version = "$semver-$key"
+        versionName = "${key.capitalize()} $semver"
+    }
 
-    upload {
-        forEach {
-            version = "$semver-$key"
-            versionName = "${key.capitalize()}/${project.name.capitalize()} $semver"
-        }
-
-        maven {
-            nexus()
-            githubPackages()
-            name = "${mod.id.get()}-$key-${project.name}"
-            artifactVersion = "$semver-${mod.minecraftVersion.get()}"
-        }
+    maven {
+        nexus()
+        githubPackages()
+        name = "${mod.id.get()}-$key"
+        artifactVersion = "$semver-${mod.minecraftVersion.get()}"
     }
 }
 
