@@ -1,9 +1,9 @@
 plugins {
-    id("com.possible-triangle.neoforge")
+    id("com.possible-triangle.fabric")
 }
 
-neoforge {
-    accessTransformer()
+fabric {
+    accessWidener()
 
     dataGen {
         splitSourceSet()
