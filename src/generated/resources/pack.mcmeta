@@ -1,6 +1,8 @@
 {
   "pack": {
-    "description": "test mod resources",
-    "pack_format": 34
+    "description": {
+      "text": "test mod resources"
+    },
+    "pack_format": 15
   }
 }

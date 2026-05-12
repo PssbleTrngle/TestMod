@@ -1,6 +1,5 @@
 package com.possible_triangle.test_mod.data;
 
-import java.util.Optional;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.DetectedVersion;
@@ -17,8 +16,7 @@ public class FabricDataEntrypoint implements DataGeneratorEntrypoint {
 
         pack.addProvider((output, $) -> new PackMetadataGenerator(output).add(PackMetadataSection.TYPE, new PackMetadataSection(
                 Component.literal("test mod resources"),
-                DetectedVersion.BUILT_IN.getPackVersion(PackType.CLIENT_RESOURCES),
-                Optional.empty()
+                DetectedVersion.BUILT_IN.getPackVersion(PackType.CLIENT_RESOURCES)
         )));
     }
 
