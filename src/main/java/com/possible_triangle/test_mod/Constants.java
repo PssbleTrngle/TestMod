@@ -9,7 +9,7 @@ public class Constants {
     public static final String MOD_ID = "test_mod";
 
     public static ResourceLocation createId(String location) {
-        return ResourceLocation.fromNamespaceAndPath(MOD_ID, location);
+        return new ResourceLocation(MOD_ID, location);
     }
 
 

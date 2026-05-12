@@ -1,9 +1,10 @@
 plugins {
-    id("com.possible-triangle.neoforge")
+    id("com.possible-triangle.forge")
 }
 
-neoforge {
+forge {
     accessTransformer()
+    enableMixins()
 
     dataGen {
         splitSourceSet()

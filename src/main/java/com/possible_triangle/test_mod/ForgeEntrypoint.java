@@ -1,15 +1,16 @@
 package com.possible_triangle.test_mod;
 
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(Constants.MOD_ID)
 public class ForgeEntrypoint {
 
-    public ForgeEntrypoint(IEventBus modBus) {
+    public ForgeEntrypoint() {
+        var modBus = FMLJavaModLoadingContext.get().getModEventBus();
         modBus.addListener((FMLCommonSetupEvent event) ->
-            Constants.LOGGER.info("neoforge started")
+            Constants.LOGGER.info("forge started")
         );
     }
 

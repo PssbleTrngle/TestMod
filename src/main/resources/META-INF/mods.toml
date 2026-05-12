@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[1,)"
+loaderVersion="[43,)"
 license="MIT"
 
 [[mods]]
@@ -9,18 +9,15 @@ displayName="${mod_name}"
 authors="${mod_author}"
 
 [[dependencies.${mod_id}]]
-    modId="neoforge"
+    modId="forge"
     mandatory=true
-    versionRange="[21,)"
+    versionRange="[43,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.${mod_id}]]
     modId="minecraft"
     mandatory=true
-    versionRange="${mc_version_range}"
+    versionRange="[1.20,1.21)"
     ordering="NONE"
     side="BOTH"
-
-[[mixins]]
-    config="${mod_id}.mixins.json"
