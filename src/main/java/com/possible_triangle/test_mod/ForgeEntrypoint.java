@@ -1,6 +1,5 @@
-package com.possible_triangle.test_mod.forge;
+package com.possible_triangle.test_mod;
 
-import com.possible_triangle.test_mod.Constants;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
