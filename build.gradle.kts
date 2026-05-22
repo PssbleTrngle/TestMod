@@ -5,6 +5,8 @@ plugins {
 neoforge {
     accessTransformer()
 
+    unitTests = true
+
     dataGen {
         splitSourceSet()
     }
