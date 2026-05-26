@@ -26,9 +26,13 @@ jobs:
           - key: common
             version: 1.21.x
           - key: neoforge
+            version: 26.1.x
+          - key: neoforge
             version: 1.21.x
           - key: forge
             version: 1.20.x
+          - key: fabric
+            version: 26.1.x
           - key: fabric
             version: 1.21.x
           - key: fabric
