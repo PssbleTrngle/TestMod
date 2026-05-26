@@ -1,8 +1,8 @@
 # <meta>
 #    <source>@pssbletrngle/github-meta-generator</source>
-#    <version>1.0.60</version>
-#    <timestamp>2026-05-13T07:26:01.200Z</timestamp>
-#    <hash>7085f1963cbbf5</hash>
+#    <version>1.0.74</version>
+#    <timestamp>2026-05-26T13:51:17.600Z</timestamp>
+#    <hash>312bdac956d5bf4a</hash>
 # </meta>
 
 name: Release
@@ -27,7 +27,7 @@ jobs:
 
       - uses: actions/setup-java@v4
         with:
-          java-version: 21
+          java-version: 26
           distribution: temurin
 
       - uses: gradle/actions/setup-gradle@v4
