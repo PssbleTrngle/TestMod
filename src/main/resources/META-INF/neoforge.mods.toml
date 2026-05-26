@@ -11,7 +11,7 @@ authors="${mod_author}"
 [[dependencies.${mod_id}]]
     modId="neoforge"
     mandatory=true
-    versionRange="[21,)"
+    versionRange="[26,)"
     ordering="NONE"
     side="BOTH"
 
