@@ -1,8 +1,8 @@
 # <meta>
 #    <source>@pssbletrngle/github-meta-generator</source>
-#    <version>1.0.57</version>
-#    <timestamp>2026-05-12T05:57:29.633Z</timestamp>
-#    <hash>f14bde545df6c0b2</hash>
+#    <version>1.0.73</version>
+#    <timestamp>2026-05-26T13:27:42.761Z</timestamp>
+#    <hash>8a2c592a67230e8a</hash>
 # </meta>
 
 name: Test
@@ -62,11 +62,12 @@ jobs:
           restore-keys: ${{ runner.os }}-sonar
 
       - name: Test
-        run: ./gradlew build check
+        run: ./gradlew build check --stacktrace
 
       - name: Analyze
         if: ${{ github.event_name == 'push' }}
         run: ./gradlew sonar
+        continue-on-error: true
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
