@@ -16,35 +16,20 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        setup:
-          - key: architectury
-            version: 1.21.x
-          - key: architectury
+        type: [architectury, common, fabric, neoforge]
+        version: [1.20.x, 1.21.x, 26.1.x]
+        include:
+          - type: forge
             version: 1.20.x
-          - key: common
-            version: 26.1.x
-          - key: common
-            version: 1.21.x
-          - key: common
-            version: 1.20.x
-          - key: neoforge
-            version: 26.1.x
-          - key: neoforge
-            version: 1.21.x
-          - key: forge
-            version: 1.20.x
-          - key: fabric
-            version: 26.1.x
-          - key: fabric
-            version: 1.21.x
-          - key: fabric
+        exclude:
+          - type: neoforge
             version: 1.20.x
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: main/${{ matrix.setup.key }}/${{ matrix.setup.version }}
+          ref: main/${{ matrix.type }}/${{ matrix.version }}
           fetch-depth: 0
 
       - uses: actions/setup-java@v4
