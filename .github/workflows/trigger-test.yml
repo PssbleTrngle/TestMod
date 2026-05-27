@@ -18,13 +18,15 @@ jobs:
       matrix:
         setup:
           - key: architectury
-            version: 1.20.x
+            version: 1.21.x
           - key: architectury
+            version: 1.20.x
+          - key: common
+            version: 26.1.x
+          - key: common
             version: 1.21.x
           - key: common
             version: 1.20.x
-          - key: common
-            version: 1.21.x
           - key: neoforge
             version: 26.1.x
           - key: neoforge
