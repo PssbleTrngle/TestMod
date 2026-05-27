@@ -24,6 +24,8 @@ jobs:
         exclude:
           - type: neoforge
             version: 1.20.x
+          - type: architectury
+            version: 26.1.x
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
