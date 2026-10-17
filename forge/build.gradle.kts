@@ -1,5 +1,6 @@
 plugins {
     id("com.possible-triangle.forge")
+    id("loader")
 }
 
 forge {
