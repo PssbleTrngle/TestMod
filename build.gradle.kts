@@ -3,30 +3,5 @@ plugins {
     id("com.possible-triangle.architectury") apply false
     id("com.possible-triangle.neoforge") apply false
     id("com.possible-triangle.fabric") apply false
+    id("conventions")
 }
-
-val (semver, _, key) =
-    project.mod.version
-        .get()
-        .split("-")
-
-subprojects {
-    apply(plugin = "com.possible-triangle.core")
-
-    upload {
-        forEach {
-            version = "$semver-$key"
-            versionName = "${key.capitalize()}/${project.name.capitalize()} $semver"
-        }
-
-        maven {
-            nexus()
-            githubPackages()
-            name = "${mod.id.get()}-$key-${project.name}"
-            artifactVersion = "$semver-${mod.minecraftVersion.get()}"
-        }
-    }
-}
-
-enableSpotless()
-enableSonarQube()
