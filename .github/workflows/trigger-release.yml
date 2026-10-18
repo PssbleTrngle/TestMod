@@ -28,7 +28,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           name: ${{ matrix.type }} 1.0.${{ github.run_number }} (${{ matrix.version }})
-          tag_name: 1.0.${{ github.run_number }}-${{ matrix.version }}-${{ matrix.type }}
+          tag_name: 1.0.${{ github.run_number }}+mc${{ matrix.version }}.${{ matrix.type }}
           body: "this is an automatic test release"
           target_commitish: main/${{ matrix.type }}/${{ matrix.version }}
           token: ${{ secrets.TRIGGER_TOKEN }}
