@@ -1,0 +1,37 @@
+name: Trigger Test
+
+on:
+  schedule:
+    - cron: "10 4 * * *"
+  workflow_dispatch:
+  repository_dispatch:
+    types: [trigger-test]
+
+env:
+  CI: true
+
+jobs:
+  trigger:
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      {{> matrix }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main/{{ var 'matrix.type' }}/{{ var 'matrix.version' }}
+          fetch-depth: 0
+
+      - uses: actions/setup-java@v4
+        with:
+          java-version: 26
+          distribution: temurin
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-read-only: true
+
+      - name: Test
+        run: ./gradlew build check publish

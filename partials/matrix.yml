@@ -1,0 +1,9 @@
+matrix:
+  type: [{{ types }}]
+  version: [{{ versions }}]
+  include:
+    - type: forge
+      version: 1.20.x
+  exclude:
+    - type: neoforge
+      version: 1.20.x

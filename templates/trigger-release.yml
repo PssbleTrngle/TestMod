@@ -1,0 +1,24 @@
+name: Trigger Release
+
+on:
+  schedule:
+    - cron: "30 4 * * 0,3"
+  workflow_dispatch:
+  repository_dispatch:
+    types: [trigger-releases]
+
+jobs:
+  trigger:
+    strategy:
+      {{> matrix }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: softprops/action-gh-release@v2
+        env:
+          GH_TOKEN: {{ var 'secrets.GITHUB_TOKEN' }}
+        with:
+          name: {{ var 'matrix.type' }} 1.0.{{ var 'github.run_number' }} ({{ var 'matrix.version' }})
+          tag_name: 1.0.{{ var 'github.run_number' }}+mc{{ var 'matrix.version' }}.{{ var 'matrix.type' }}
+          body: "this is an automatic test release"
+          target_commitish: main/{{ var 'matrix.type' }}/{{ var 'matrix.version' }}
+          token: {{ var 'secrets.TRIGGER_TOKEN' }}

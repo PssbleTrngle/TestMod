@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        type: [architectury, common, fabric, neoforge]
+        type: [common, fabric, neoforge]
         version: [1.20.x, 1.21.x, 26.1.x]
         include:
           - type: forge
@@ -24,8 +24,6 @@ jobs:
         exclude:
           - type: neoforge
             version: 1.20.x
-          - type: architectury
-            version: 26.1.x
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

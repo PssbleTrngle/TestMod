@@ -1,0 +1,19 @@
+{
+  "name": "testmod-infra",
+  "module": "main.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "husky": "^9.1.7"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.9"
+  }
+}

@@ -1,0 +1,3 @@
+bun run main.ts
+
+git add .github/
