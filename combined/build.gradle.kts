@@ -6,6 +6,10 @@ plugins {
     id("upload")
 }
 
+modModules.forEach {
+    evaluationDependsOn(it.path)
+}
+
 dependencies {
     modModules.forEach {
         api(project(it.path))
@@ -19,10 +23,5 @@ neoForge.runs.configureEach {
 }
 
 modModules.forEach {
-    modrinth.additionalFiles.add(
-        provider {
-            it.upload.modrinth.file
-                .get()
-        },
-    )
+    modrinth.additionalFiles.add(it.modrinth.file)
 }
