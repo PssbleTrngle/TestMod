@@ -9,5 +9,5 @@ repositories {
 }
 
 dependencies {
-    implementation("com.possible-triangle:core:1.4.+")
+    implementation("com.possible-triangle:neoforge:1.4.+")
 }

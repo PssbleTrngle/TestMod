@@ -7,10 +7,5 @@ plugins {
 val setupType = rootProject.providers.gradleProperty("setup_key")
 mod.versionStrategy = TestVersionStrategy(setupType)
 
-upload.maven {
-    nexus()
-    githubPackages()
-}
-
 enableSpotless()
 enableSonarQube()
