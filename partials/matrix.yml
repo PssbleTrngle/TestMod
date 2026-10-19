@@ -4,6 +4,8 @@ matrix:
   include:
     - type: forge
       version: 1.20.x
+    - type: modular
+      version: 1.21.x
   exclude:
     - type: neoforge
       version: 1.20.x
